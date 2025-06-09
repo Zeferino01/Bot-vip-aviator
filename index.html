@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bot Aviator VIP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(270deg, #1a2a6c, #b21f1f, #fdbb2d);
+      background-size: 600% 600%;
+      animation: gradientShift 15s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .step {
+      display: none;
+      width: 90%;
+      max-width: 420px;
+      background: rgba(255, 255, 255, 0.97);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      animation: fade 0.6s ease;
+      position: relative;
+    }
+
+    .step.active { display: block; }
+
+    .header-img {
+      width: 100%;
+      max-height: 160px;
+      object-fit: contain;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: #222;
+    }
+
+    p {
+      color: #555;
+      margin-bottom: 1.3rem;
+      font-size: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 0.5rem 0.3rem;
+      padding: 0.8rem 1.6rem;
+      border: none;
+      border-radius: 6px;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    }
+
+    .btn-secondary {
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+    }
+
+    .progress-container {
+      margin: 2rem 0;
+      text-align: left;
+    }
+
+    .bar {
+      width: 100%;
+      height: 16px;
+      background: #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(to right, #43e97b, #38f9d7);
+      transition: width 0.4s ease;
+    }
+
+    #percentText {
+      font-weight: 600;
+      color: #333;
+      margin-top: 0.5rem;
+    }
+
+    .loading-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(255,255,255,0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2rem;
+      color: #333;
+      z-index: 10;
+      display: none;
+    }
+
+    @keyframes fade { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body>
+
+<div id="step1" class="step active">
+  <div class="loading-overlay" id="loading1">Carregando...</div>
+  <img src="https://i.postimg.cc/yW0nMQTB/bot-aviator-vip.jpg" alt="Bot Aviator VIP" class="header-img">
+  <h1>Boas-vindas ao BOT AVIATOR VIP ✈️</h1>
+  <p>Participe do grupo VIP e avance para configurar seu bot em segundos.</p>
+  <a href="https://chat.whatsapp.com/Hm0lBfvqkcOEJjAppIaC7A" class="btn" target="_blank">Entrar no Grupo VIP</a>
+  <button class="btn btn-secondary" onclick="showLoading(2)">Avançar no Bot</button>
+</div>
+
+<div id="step2" class="step">
+  <div class="loading-overlay" id="loading2">Carregando...</div>
+  <img src="https://i.postimg.cc/yW0nMQTB/bot-aviator-vip.jpg" alt="Bot Aviator VIP" class="header-img">
+  <h1>Parabéns! 🎉</h1>
+  <p>Seu bot foi configurado com sucesso e está quase pronto para uso.</p>
+  <button class="btn" onclick="showLoading(3)">OBTER O MEU BOT</button>
+</div>
+
+<div id="step3" class="step">
+  <div class="loading-overlay" id="loading3">Carregando...</div>
+  <img src="https://i.postimg.cc/yW0nMQTB/bot-aviator-vip.jpg" alt="Bot Aviator VIP" class="header-img">
+  <h1>CADASTRO OFFICIAL</h1>
+  <p>Cadastre-se gratuitamente e ative seu acesso VIP ao bot.</p>
+  <a href="https://www.megagamelive.com/affiliates/?btag=2233419" class="btn" target="_blank">REGISTAR-SE</a>
+  <button class="btn btn-secondary" onclick="showLoading(4)">Continuar</button>
+</div>
+
+<div id="step4" class="step">
+  <img src="https://i.postimg.cc/yW0nMQTB/bot-aviator-vip.jpg" alt="Bot Aviator VIP" class="header-img">
+  <h1>Compartilhe para Usar Grátis 🔁</h1>
+  <p>Compartilhe no WhatsApp para 5 grupos ou amigos para liberar o uso completo do bot 100% gratuito.</p>
+  <a id="shareBtn" class="btn" target="_blank" onclick="recordShare()">Compartilhar</a>
+  <div class="progress-container">
+    <label>Progresso:</label>
+    <div class="bar"><div id="barFill" class="bar-fill"></div></div>
+    <p id="percentText">0% concluído</p>
+  </div>
+</div>
+
+<script>
+  let shares = 0;
+
+  function showLoading(nextStepNum) {
+    const currentOverlay = document.querySelector(`#loading${nextStepNum - 1}`);
+    currentOverlay && (currentOverlay.style.display = 'flex');
+
+    setTimeout(() => {
+      currentOverlay && (currentOverlay.style.display = 'none');
+      nextStep(nextStepNum);
+    }, 1200);
+  }
+
+  function nextStep(stepNumber) {
+    document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+    document.getElementById('step' + stepNumber).classList.add('active');
+  }
+
+  function recordShare() {
+    shares = Math.min(shares + 1, 4);
+    const percent = (shares / 4) * 100;
+    document.getElementById('barFill').style.width = percent + '%';
+    document.getElementById('percentText').innerText = Math.round(percent) + '% concluído';
+
+    if (shares === 4) {
+      setTimeout(() => {
+        alert('🎉 Parabéns! Você desbloqueou o acesso gratuito ao bot!');
+      }, 300);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const currentUrl = window.location.href;
+    const msg = encodeURIComponent("🔥 Acabei de ativar meu BOT AVIATOR VIP que dá sinais gratuitos! Acesse aqui: " + currentUrl + " ✈️");
+    document.getElementById('shareBtn').href = `https://api.whatsapp.com/send?text=${msg}`;
+  });
+</script>
+
+</body>
+</html>
